@@ -1,3 +1,78 @@
+## 4.3 Caché LRU mediante Lista Doblemente Enlazada
+
+### Descripción
+
+Se implementó una caché LRU (Least Recently Used) utilizando una lista doblemente enlazada y una tabla hash (`map`). Esta combinación permite realizar operaciones de búsqueda, inserción y actualización de elementos en tiempo O(1).
+
+La lista doblemente enlazada mantiene el orden de uso de los elementos, mientras que el mapa permite acceder rápidamente a cada nodo mediante su clave.
+
+### Estructuras utilizadas
+
+#### Nodo
+
+```go
+type Nodo struct {
+    clave int
+    valor int
+    prev *Nodo
+    next *Nodo
+}
+```
+
+Cada nodo almacena una clave, un valor y referencias al nodo anterior y siguiente.
+
+#### LRU
+
+```go
+type LRU struct {
+    capacidad int
+    mapa map[int]*Nodo
+    head *Nodo
+    tail *Nodo
+}
+```
+
+- `head`: elemento más recientemente utilizado.
+- `tail`: elemento menos recientemente utilizado.
+- `mapa`: acceso rápido a los nodos.
+- `capacidad`: tamaño máximo de la caché.
+
+### Operaciones principales
+
+#### Get(clave)
+
+Busca una clave dentro de la caché.
+
+- Si existe, el nodo se mueve al frente de la lista.
+- Si no existe, retorna que la clave no fue encontrada.
+
+#### Put(clave, valor)
+
+Inserta o actualiza un elemento.
+
+- Si la clave ya existe, actualiza su valor y mueve el nodo al frente.
+- Si la clave no existe y la caché está llena, elimina el nodo menos recientemente utilizado (`tail`).
+- Finalmente agrega el nuevo nodo al frente de la lista.
+
+### Lectura del dataset
+
+Se utilizó el archivo `ratings.csv`. De cada registro se extrajo el campo `movieId`, generando una secuencia de accesos que posteriormente fue utilizada para evaluar el comportamiento de la caché.
+
+### Resultados
+
+| Capacidad | Hits | Hit Ratio |
+|------------|--------:|-----------:|
+| 50 | 784 | 0.78% |
+| 100 | 2481 | 2.46% |
+| 500 | 19629 | 19.47% |
+| 1000 | 38399 | 38.08% |
+
+### Conclusión
+
+Los resultados muestran que al incrementar la capacidad de la caché aumenta el hit ratio. Esto se debe a que una mayor cantidad de elementos puede mantenerse almacenada, reduciendo la probabilidad de eliminar elementos que serán utilizados nuevamente en accesos futuros.
+
+
+
 # Taller 3 — Índice AVL con consultas por rango
 
 ## 1. Descripción del proyecto
