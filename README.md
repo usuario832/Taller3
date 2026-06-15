@@ -54,6 +54,18 @@ Inserta o actualiza un elemento.
 - Si la clave no existe y la caché está llena, elimina el nodo menos recientemente utilizado (`tail`).
 - Finalmente agrega el nuevo nodo al frente de la lista.
 
+### Complejidad
+
+| Operación | Complejidad |
+|------------|------------|
+| Get | O(1) |
+| Put | O(1) |
+| Búsqueda en mapa | O(1) |
+| Eliminación de tail | O(1) |
+| Movimiento al frente | O(1) |
+
+La combinación de una tabla hash y una lista doblemente enlazada permite mantener todas las operaciones principales en tiempo constante O(1).
+
 ### Lectura del dataset
 
 Se utilizó el archivo `ratings.csv`. De cada registro se extrajo el campo `movieId`, generando una secuencia de accesos que posteriormente fue utilizada para evaluar el comportamiento de la caché.
@@ -351,7 +363,7 @@ El video incluye:
 ## 13. Integrantes
 
 * Rodrigo Villavicencio
-* Fabrizio
+* Fabrizio Rodriguez
 * Fernando
 
 ---
