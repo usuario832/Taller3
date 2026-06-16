@@ -341,26 +341,7 @@ Estos diagramas muestran la firma de cada función, los parámetros, los retorno
 
 ---
 
-## 12. Video explicativo
-
-Enlace del video de YouTube:
-
-```text
-PEGAR AQUÍ EL ENLACE DEL VIDEO NO LISTADO
-```
-
-El video incluye:
-
-* Presentación del problema
-* Explicación de la estructura AVL
-* Explicación de inserción y rotaciones
-* Explicación de consulta por rango
-* Ejecución del código sobre el dataset MovieLens
-* Comentario de resultados de performance
-
----
-
-## 13. Integrantes
+## 12. Integrantes
 
 * Rodrigo Villavicencio
 * Fabrizio Rodriguez
@@ -368,7 +349,7 @@ El video incluye:
 
 ---
 
-## 14. Conclusión
+## 13. Conclusión
 
 El proyecto implementa correctamente un árbol AVL desde cero en Go. El programa procesa datos reales del dataset MovieLens, calcula el rating promedio por película e indexa los registros en un árbol AVL.
 
