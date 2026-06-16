@@ -360,3 +360,5 @@ Balanceado: true
 ```
 
 Además, los benchmarks muestran que la inserción y la consulta por rango se comportan de acuerdo con la complejidad teórica esperada.
+
+Video Youtube: https://youtu.be/yEZzImW7mG8?si=kRC-0UK67rjmiLtW
