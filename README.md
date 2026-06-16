@@ -85,7 +85,7 @@ Los resultados muestran que al incrementar la capacidad de la caché aumenta el 
 
 
 
-# Taller 3 — Índice AVL con consultas por rango
+#  4.4 Índice AVL con consultas por rango
 
 ## 1. Descripción del proyecto
 
